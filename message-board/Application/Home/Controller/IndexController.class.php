@@ -81,7 +81,7 @@ class IndexController extends Controller
 		}
 		$this->checkLogin();
 		$model = new Model('Message');
-		$result = $model->where(array('message_id' => $id, 'user_id' => session('user.userId')))->find();
+		$result = $model->where(array('message_id' => $id, 'user_id' => session('user.userId')))->delete();
 		if (!$result)
 		{
 			$this->error('删除失败');
